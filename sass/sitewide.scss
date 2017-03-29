@@ -1,0 +1,555 @@
+@import "variables.scss"; // Include all variables for the site like fonts
+@import "mixins.scss"; // Include the CSS mixins
+@import "reset.scss"; // Include the general HTML reset
+
+#frame {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1370px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: $headerHeight;
+    background-color: $white;
+    @include transition(height .3s ease-in);
+    
+    &.small {
+        height: $headerSmall;
+
+        img {
+            height: 26px;
+            width: auto;
+        }
+    }
+}
+
+main {
+    padding: $headerHeight 0 0 0;
+
+    #hero {
+        padding: 30px 0 40px;
+        background-image: url('../img/hero.jpg');
+        background-repeat: no-repeat;
+        background-position: top center;
+        @include background-size(cover);
+
+        @include small {
+            padding: 80px 0;
+        }
+        @include desktop {
+            padding: 100px 0;
+        }
+        @include superDesktop {
+            padding: 140px 0;
+        }
+
+        #content {
+            text-align: center;
+            color: $white;
+
+            h1 {
+                width: 320px;
+                margin: 0 auto 5px;
+                font-size: 22px;
+                line-height: 28px;
+                font-weight: bold;
+
+                @include small {
+                    width: 100%;
+                    font-size: 26px;
+                    line-height: 32px;
+                }
+                @include desktop {
+                    width: 100%;
+                    font-size: 36px;
+                    line-height: 42px;
+                }
+            }
+
+            h2 {
+                margin: 0 0 20px;
+                font-size: 16px;
+                line-height: 22px;
+                font-weight: normal;
+
+                @include small {
+                    font-size: 20px;
+                    line-height: 26px;
+                }
+                @include desktop {
+                    font-size: 24px;
+                    line-height: 30px;
+                    margin: 0 0 30px;
+                }
+            }
+
+            .button {
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0 -4px 0 0;
+                width: 135px;
+
+                @include small {
+                    width: 200px;
+                }
+                @include desktop {
+                    width: 235px;
+                }
+
+                &:first-of-type {
+                    margin: 0 4px 0 0;
+                }
+            }
+        }
+    }
+
+    #clients {
+
+        > img {
+            display: block;
+            margin: 0 auto;
+            width: $lockMobile;
+            height: auto;
+
+            @include small {
+                width: $lockSmall;
+            }
+            @include desktop {
+                width: $lockDesktop;
+            }
+            @include superDesktop {
+                width: $lockSuper;
+            }
+        }
+    }
+
+    #features {
+        padding: 40px 0;
+
+        h3 {
+            padding: 0 0 30px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 14px;
+            font-weight: normal;
+            text-transform: uppercase;
+            color: $darkGray;
+
+            @include desktop {
+                font-size: 24px;
+                line-height: 24px;
+                padding: 0 0 40px;
+            }
+        }
+
+        .grid {
+
+            @include small {
+                width: 740px;
+            }
+            @include desktop {
+                width: 940px;
+            }
+
+            .col {
+                margin: 0 auto 15px;
+                text-align: center;
+
+                > div {
+                    width: 230px;
+                    margin: 0 auto 15px;
+
+                    @include small {
+                        margin: 0 auto 25px;
+                    }
+                    @include desktop {
+                        width: 300px;
+                    }
+                }
+
+                h4 {
+                    font-size: 12px;
+                    line-height: 16px;
+                    font-weight: normal;
+                    text-transform: uppercase;
+                    color: $darkGray;
+
+                    @include desktop {
+                        font-size: 14px;
+                        line-height: 24px;
+                    }
+                }
+
+                p {
+                    font-size: 10px;
+                    line-height: 14px;
+                    color: $darkGray;
+
+                    @include desktop {
+                        font-size: 14px;
+                        line-height: 18px;
+                    }
+                }
+
+                img {
+                    display: block;
+                    width: 180px;
+                    height: auto;
+                    margin: 0 auto;
+
+                    @include small {
+                        width: 90%;
+                    }
+                }
+            }
+        }
+    }
+
+    #referrals {
+        padding: 40px 0;
+        background-color: $blue;
+        text-align: center;
+
+        .grid {
+
+            @include small {
+                width: 500px;
+            }
+            @include desktop {
+                width: 700px;
+            }
+
+            .col {
+
+                &:first-of-type {
+                    margin: 0 0 30px;
+
+                    @include small {
+                        margin: 0;
+                    }
+
+                    p {
+                        width: 190px;
+
+                        @include desktop {
+                            width: 260px;
+                        }
+                    }
+                }
+                
+                > img {
+                    height: 20px;
+                    width: auto;
+
+                    @include desktop {
+                        height: 30px;
+                    }
+                }
+
+                p {
+                    width: 230px;
+                    margin: 0 auto;
+                    font-size: 10px;
+                    line-height: 14px;
+                    color: $white;
+
+                    @include desktop {
+                        width: 310px;
+                        font-size: 14px;
+                        line-height: 18px;
+                    }
+
+                    &:before {
+                        content: '';
+                        position: relative;
+                        display: block;
+                        height: 2px;
+                        width: 50px;
+                        margin: 10px auto;
+                        background-color: $lightBlue;
+
+                        @include desktop {
+                            margin: 15px auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #demo {
+        padding: 40px 0;
+        background-color: $gray;
+        background-image: url('../img/honeycomb.png');
+        background-repeat: no-repeat;
+        background-position: top center;
+        @include background-size(100% auto);
+        text-align: center;
+
+        @include desktop {
+            padding: 80px 0;
+        }
+
+        h2 {
+            width: 310px;
+            margin: 0 auto 10px;
+            font-size: 22px;
+            line-height: 26px;
+            font-weight: bold;
+            color: $darkGray;
+
+            @include small {
+                width: 100%;
+                font-size: 24px;
+                line-height: 28px;
+            }
+            @include desktop {
+                font-size: 26px;
+                line-height: 32px;
+            }
+        }
+
+        h3 {
+            margin: 0 0 20px;
+            font-size: 18px;
+            line-height: 22px;
+            font-weight: normal;
+            color: $orange;
+
+            @include small {
+                font-size: 20px;
+                line-height: 24px;
+            }
+            @include desktop {
+                margin: 0 0 40px;
+                font-size: 22px;
+                line-height: 26px;
+            }
+        }
+
+        .grid {
+            margin: 0 0 20px;
+            
+            @include small {
+                flex-wrap: wrap;
+                width: 530px;
+                margin: 0 auto 20px;
+            }
+            @include desktop {
+                width: 730px;
+            }
+
+            .col {
+                padding: 5px 0;
+
+                input {
+                    padding: 10px;
+                    width: 250px;
+                    border: 1px solid $inputGray;
+                    @include border-radius(5px);
+                    background-color: $white;
+                    color: $darkGray;
+
+
+                    @include desktop {
+                        padding: 15px;
+                        width: 350px;
+                    }
+                }
+            }
+
+            #country {
+                position: relative;
+
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                    width: 10px;
+                    height: 10px;
+                    border-bottom: 1px solid $darkGray;
+                    border-right: 1px solid $darkGray;
+                    @include transform(rotate(45deg));
+                }
+            }
+        }
+
+        .button {
+            width: 180px;
+
+            @include desktop {
+                width: 220px;
+            }
+        }
+    }
+}
+
+footer {
+    position: relative;
+    height: 180px;
+
+    @include small {
+        height: 100px;
+    }
+
+    p {
+        margin: 0 0 20px;
+        font-size: 12px;
+        line-height: 16px;
+        text-align: center;
+        color: $darkGray;
+
+        @include small {
+            @include alignVert;
+            left: 0;
+            text-align: left;
+        }
+        @include desktop {
+            font-size: 13px;
+            line-height: 13px;
+        }
+
+        span {
+            display: none;
+            margin: 0 8px 0 5px;
+
+            @include small {
+                display: inline;
+            }
+        }
+
+        a {
+            display: block;
+            margin: 5px 0;
+            color: $darkGray;
+
+            &:hover {
+                border-bottom: 1px solid $darkGray;
+            }
+
+            @include small {
+                display: inline;
+                margin: 0;
+            }
+        }
+    }
+
+    #share {
+        text-align: center;
+
+        @include small {
+            @include alignVert;
+            right: 0;
+            text-align: right;
+        }
+
+        li {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 4px 0 0;
+
+            @include desktop {
+                margin: 0;
+            }
+
+            &:last-of-type {
+                margin: 0 -4px 0 0;
+            } 
+
+            img {
+                width: 30px;
+                height: auto;
+
+                @include desktop {
+                    width: 55px;
+                }
+            }
+        }
+    }
+}
+
+.align {
+    @include alignBoth;
+    width: $lockMobile;
+
+    @include small {
+        width: $lockSmall;
+    }
+    @include desktop {
+        width: $lockDesktop;
+    }
+    @include superDesktop {
+        width: $lockSuper;
+    }
+}
+
+.grid {
+
+    @include small {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 500px;
+        margin: 0 auto;
+    }
+
+    .col {
+
+        @include small {
+            flex-grow: 1;
+            flex-basis: 0;
+        }
+    }
+}
+
+.button {
+    padding: 10px 0;
+    width: 150px;
+    border: 1px solid $orange;
+    @include border-radius(5px);
+    color: $white;
+    background-color: $orange;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 10px;
+    line-height: 10px;
+    @include transition(all .3s ease-in);
+
+    @include small {
+        padding: 15px 0;
+        font-size: 12px;
+        line-height: 12px;
+    }
+    @include desktop {
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    &:hover {
+        background-color: $white;
+        color: $orange;
+    }
+
+    &.empty {
+        background-color: transparent;
+        border-color: $white;
+
+        &:hover {
+            color: $orange;
+            border-color: $orange;
+        }
+    }
+}
+
+
+
+
+
+
