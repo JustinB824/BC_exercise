@@ -346,37 +346,24 @@ main {
 
             .col {
                 padding: 5px 0;
-
-                input {
+                flex-basis: 50%;
+                
+                input, select {
                     padding: 10px;
                     width: 250px;
                     border: 1px solid $inputGray;
                     @include border-radius(5px);
                     background-color: $white;
                     color: $darkGray;
-
+                    font-size: 14px;
+                    line-height: 14px;
 
                     @include desktop {
                         padding: 15px;
                         width: 350px;
+                        font-size: 16px;
+                        line-height: 16px;
                     }
-                }
-            }
-
-            #country {
-                position: relative;
-
-                &:after {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    top: 20px;
-                    right: 20px;
-                    width: 10px;
-                    height: 10px;
-                    border-bottom: 1px solid $darkGray;
-                    border-right: 1px solid $darkGray;
-                    @include transform(rotate(45deg));
                 }
             }
         }
@@ -397,6 +384,9 @@ footer {
 
     @include small {
         height: 100px;
+    }
+    @include desktop {
+        height: 140px;
     }
 
     p {

@@ -489,8 +489,9 @@ main {
         main #demo .grid {
           width: 730px; } }
       main #demo .grid .col {
-        padding: 5px 0; }
-        main #demo .grid .col input {
+        padding: 5px 0;
+        flex-basis: 50%; }
+        main #demo .grid .col input, main #demo .grid .col select {
           padding: 10px;
           width: 250px;
           border: 1px solid #d5d5d5;
@@ -500,28 +501,15 @@ main {
           -o-border-radius: 5px;
           border-radius: 5px;
           background-color: #ffffff;
-          color: #515151; }
+          color: #515151;
+          font-size: 14px;
+          line-height: 14px; }
           @media (min-width: 992px) {
-            main #demo .grid .col input {
+            main #demo .grid .col input, main #demo .grid .col select {
               padding: 15px;
-              width: 350px; } }
-      main #demo .grid #country {
-        position: relative; }
-        main #demo .grid #country:after {
-          content: '';
-          display: block;
-          position: absolute;
-          top: 20px;
-          right: 20px;
-          width: 10px;
-          height: 10px;
-          border-bottom: 1px solid #515151;
-          border-right: 1px solid #515151;
-          -webkit-transform: rotate(45deg);
-          -moz-transform: rotate(45deg);
-          -ms-transform: rotate(45deg);
-          -o-transform: rotate(45deg);
-          transform: rotate(45deg); }
+              width: 350px;
+              font-size: 16px;
+              line-height: 16px; } }
     main #demo .button {
       width: 180px; }
       @media (min-width: 992px) {
@@ -534,6 +522,9 @@ footer {
   @media (min-width: 768px) {
     footer {
       height: 100px; } }
+  @media (min-width: 992px) {
+    footer {
+      height: 140px; } }
   footer p {
     margin: 0 0 20px;
     font-size: 12px;
